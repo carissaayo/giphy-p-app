@@ -7,7 +7,7 @@ const Search = () => {
   let dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    if (!searchValue) return;
     dispatch(fetchSearchGiphy(searchValue));
   };
 

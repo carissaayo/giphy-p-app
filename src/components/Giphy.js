@@ -10,5 +10,4 @@ const Giphy = ({ gif }) => {
     </Link>
   );
 };
-
 export default Giphy;
