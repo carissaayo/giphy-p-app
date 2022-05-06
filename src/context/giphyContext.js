@@ -14,7 +14,7 @@ const initialState = {
 export const fetchGiphy = createAsyncThunk("giphys/update", async () => {
   const results = await axios("https://api.giphy.com/v1/gifs/trending", {
     params: {
-      api_key: "tAEFUgagRjRNkU24orQdFB8EHMcNTUSe",
+      api_key: process.env.REACT_APP_GIPHY_API_KEY,
       limit: 100,
     },
   });
@@ -26,7 +26,7 @@ export const fetchSearchGiphy = createAsyncThunk(
   async (search) => {
     const results = await axios("https://api.giphy.com/v1/gifs/search", {
       params: {
-        api_key: "tAEFUgagRjRNkU24orQdFB8EHMcNTUSe",
+        api_key: process.env.REACT_APP_GIPHY_API_KEY,
         q: search,
         limit: 100,
       },
@@ -40,7 +40,7 @@ export const getGiphyDetails = createAsyncThunk(
   async (gif_id) => {
     const results = await axios(`https://api.giphy.com/v1/gifs/${gif_id}`, {
       params: {
-        api_key: "tAEFUgagRjRNkU24orQdFB8EHMcNTUSe",
+        api_key: process.env.REACT_APP_GIPHY_API_KEY,
         gif_id,
         limit: 100,
       },
